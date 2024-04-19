@@ -1,0 +1,3 @@
+/home/vladislave/coding/paralelka/task_1_sinus/with_cmake/CMakeFiles/task1.dir
+/home/vladislave/coding/paralelka/task_1_sinus/with_cmake/CMakeFiles/edit_cache.dir
+/home/vladislave/coding/paralelka/task_1_sinus/with_cmake/CMakeFiles/rebuild_cache.dir
