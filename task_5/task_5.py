@@ -78,7 +78,7 @@ class VideoProcessor:
         out.release()
 
     def predict_and_enqueue(self):
-        local_model = YOLO(model="yolov8s-pose.pt", verbose=False)
+        local_model = YOLO(model="yolov8n.pt", verbose=False)
         while True:
             try:
                 frame, index = self.frame_queue.get(timeout=1)
