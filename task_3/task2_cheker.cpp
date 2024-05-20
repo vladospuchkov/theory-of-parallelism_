@@ -4,6 +4,7 @@
 #include <cmath>
 #include <cstring> 
 
+
 int Sinus(const std::string& filename){
     std::ifstream file(filename);
     if (!file.is_open()) {
