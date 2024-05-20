@@ -4,14 +4,6 @@
 #include <cmath>
 #include <cstring> 
 
-struct Task {
-    std::string type;
-    int num;
-    double arg1;
-    double arg2;
-    double result;
-};
-
 int Sinus(const std::string& filename){
     std::ifstream file(filename);
     if (!file.is_open()) {
@@ -23,17 +15,18 @@ int Sinus(const std::string& filename){
     while (std::getline(file, line)) {
         std::istringstream iss(line);
 
-        Task task;
-        std::string taskStr;
-        if (!(iss >> task.type >> task.num >> task.arg1 >> task.result)) {
+        std::string taskStr, argStr, resultStr;
+        double arg, result, num;
+
+        if (!(iss >> taskStr >> num >> argStr >> arg >> resultStr >> result)) {
             std::cerr << "Не получилось распарсить строку: " << line << std::endl;
         }
 
-        double sinArg = std::sin(task.arg1);
+        double sinArg = std::sin(arg);
         
-        if (std::abs(sinArg - task.result) > 1e-5) {
-            std::cout << "Task: " << task.num << " arg1 = " << task.arg1 << ", sin(arg1) = " << sinArg 
-                      << ", Result = " << task.result << " (получившееся значение не соответствует исходному)" << std::endl;
+        if (std::abs(sinArg - result) > 1e-5) {
+            std::cout << "Task: "<< num << " arg1 = " << arg << ", sin(arg1) = " << sinArg << ", Result = " << result << 
+            " (получившееся значение не соответствует исходному)" << std::endl;
             count_err++;
         }
     }
@@ -53,17 +46,18 @@ int Sqrt(const std::string& filename){
     while (std::getline(file, line)) {
         std::istringstream iss(line);
 
-        Task task;
-        std::string taskStr;
-        if (!(iss >> task.type >> task.num >> task.arg1 >> task.result)) {
+        std::string taskStr, argStr, resultStr;
+        double arg, result, num;
+
+        if (!(iss >> taskStr >> num >> argStr >> arg >> resultStr >> result)) {
             std::cerr << "Не получилось распарсить строку: " << line << std::endl;
         }
 
-        double sqrtArg = std::sqrt(task.arg1);
+        double sqrtArg = std::sqrt(arg);
         
-        if (std::abs(sqrtArg - task.result) > 1e-5) {
-            std::cout << "Task: " << task.num << " arg1 = " << task.arg1 << ", sqrt(arg1) = " << sqrtArg 
-                      << ", Result = " << task.result << " (получившееся значение не соответствует исходному)" << std::endl;
+        if (std::abs(sqrtArg - result) > 1e-5) {
+            std::cout << "Task: "<< num << " arg1 = " << arg << ", sin(arg1) = " << sqrtArg << ", Result = " << result << 
+            " (получившееся значение не соответствует исходному)" << std::endl;
             count_err++;
         }
     }
@@ -83,18 +77,18 @@ int Pow(const std::string& filename){
     while (std::getline(file, line)) {
         std::istringstream iss(line);
 
-        Task task;
-        std::string taskStr;
-        if (!(iss >> task.type >> task.num >> task.arg1 >> task.arg2 >> task.result)) {
+        std::string taskStr, argStr1, argStr2, resultStr;
+        double arg1, arg2, result, num;
+
+        if (!(iss >> taskStr >> num >> argStr1 >> arg1 >> argStr2 >> arg2 >> resultStr >> result)) {
             std::cerr << "Не получилось распарсить строку: " << line << std::endl;
         }
 
-        double powArg = std::pow(task.arg1, task.arg2);
+        double powArg = std::pow(arg1, arg2);
         
-        if (std::abs(powArg - task.result) > 1e-5) {
-            std::cout << "Task: " << task.num << " arg1 = " << task.arg1 << " arg2 = " << task.arg2 
-                      << ", arg1^arg2 = " << powArg << ", Result = " << task.result 
-                      << " (получившееся значение не соответствует исходному)" << std::endl;
+        if (std::abs(powArg - result) > 1e-5) {
+            std::cout << "Task: "<< num << " arg1 = " << arg1 << " arg2 = " << arg2 << ", arg1^arg2 = " << powArg << ", Result = " << result << 
+            " (получившееся значение не соответствует исходному)" << std::endl;
             count_err++;
         }
     }
