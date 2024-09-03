@@ -1,0 +1,4 @@
+/home/v.puchkov/task8/build/CMakeFiles/main.dir
+/home/v.puchkov/task8/build/CMakeFiles/check.dir
+/home/v.puchkov/task8/build/CMakeFiles/edit_cache.dir
+/home/v.puchkov/task8/build/CMakeFiles/rebuild_cache.dir
